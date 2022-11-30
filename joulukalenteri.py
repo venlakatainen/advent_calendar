@@ -1,8 +1,7 @@
 from tkinter import *
-from sana import game
+from sana import mainloop
 import webbrowser
 import random
-
 
 # create window
 window = Tk()
@@ -40,29 +39,36 @@ def openWindow():
     addPoem.pack()
     addPoem.insert(END,poem)
 
-functions = [open, openWindow, game, "", "", open]
-arguments = [url1, "", "", "", "", url2]
+functions = [open, openWindow, mainloop, open, open, open, open, open, open, open, open, open, open, open, open, open, open, open, open, open, open, open, open]
+arguments = [url1, None, None, url1, url1, url1, url1, url1, url1, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2]
+
 
 # buttons
 x = 35
 y = 25
 day = 1
 
+
+
 for j in range(4):
     y=(y+120)
     x=35
     for i in range(6):
-        print(i)
-        button = Button(window, text = (day), bd = 5, bg = "#60100B", activebackground='#173518', height=4, width=6, command=lambda : functions[day-1(arguments[day-1])])
-        button['font'] = 'Broadway'
-        if (i <= 6):
-            print(i)
-            print(x)
-            print(y)
-            button.place(x=x,y=y)
+        print(arguments[day-1])
+        if (arguments[day-1]==None):
+            button = Button(window, text = day, bd = 5, bg = "#60100B", activebackground='#173518', height=4, width=6, command= lambda : functions[day-1]())
+            button['font'] = 'Broadway'
+            if (i <= 6):
+                button.place(x=x,y=y)
+        else:        
+            button = Button(window, text = day, bd = 5, bg = "#60100B", activebackground='#173518', height=4, width=6, command= lambda : functions[day-1](arguments[day-1]))
+            button['font'] = 'Broadway'
+            if (i <= 6):
+                button.place(x=x,y=y)
         x=x+105
         day += 1
-    
+
 
 label.pack()
 window.mainloop()
+
