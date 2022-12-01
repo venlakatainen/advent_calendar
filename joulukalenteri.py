@@ -3,6 +3,7 @@ from sana import main
 from PIL import Image
 from taikinaohje import mainDough
 from christmascard import mainCard
+from leivonta import christmasCake
 import webbrowser
 import turtle
 
@@ -36,6 +37,15 @@ url2 = "https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4isyysp%C3%A4iv%C3%A4"
 url3 = "https://www.youtube.com/watch?v=aAkMkVFwAoo&ab_channel=MariahCareyVEVO"
 url4 = "https://www.youtube.com/watch?v=fyEAX7Cd3OE&ab_channel=7clouds"
 url5 = "https://areena.yle.fi/1-50628566"
+url6 = "https://www.youtube.com/watch?v=LUjn3RpkcKY&ab_channel=JustinBieberVEVO"
+url7 = "https://en.wikipedia.org/wiki/Christmas"
+url8 = "https://www.youtube.com/watch?v=N8NcQzMQN_U&ab_channel=JoseFelicianoVEVO"
+url9 = "https://www.youtube.com/watch?v=g-OF7KGyDis&ab_channel=ChristmasSongsandCarols-LovetoSing"
+url10 = "https://www.youtube.com/watch?v=nlR0MkrRklg&ab_channel=ArianaGrandeVevo"
+url11 = "https://www.youtube.com/watch?v=gset79KMmt0&ab_channel=Sia"
+url12 = "https://www.youtube.com/watch?v=V3EYjVPRClU&ab_channel=SiaVEVO"
+url13 = "https://www.youtube.com/watch?v=MGanJGGVSrw&ab_channel=SiaVEVO"
+url14 = "https://www.youtube.com/watch?v=JPp-oLkQPQQ&ab_channel=SiaVEVO"
 
 poem = "I’m A Little Snowman \nI’m a little snowman short and fat,\nHere is my scarf and here is my hat.\nWhen I see the snowfall,\nHear me shout “All you children please come out!”"
 
@@ -74,8 +84,8 @@ def openWindow():
 
 
 # list of functions and arguments
-functions = [open, openWindow, main, open, open, open, openPic, write, open, mainDough, None, openPic, None, None, main, None, None, None, mainCard, None, None, None, None, None]
-arguments = [url1, None, None, url3, url4, url2, pic1, None, url5, None, None, pic2, None, None, None, None, None, None, None, None, None, None, None, None]
+functions = [open, openWindow, main, open, open, open, openPic, write, open, mainDough, open, openPic, open, open, main, open, open, open, mainCard, open, open, christmasCake, open, main]
+arguments = [url1, None, None, url3, url4, url2, pic1, None, url5, None, url7, pic2, url10, url11, None, url6, url12, url13, None, url8, url14, None, url9, None]
 
 # loop for creating grid and buttons
 
