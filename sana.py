@@ -3,7 +3,6 @@ from tkinter import *
 
 globalword = ""
 
-
 def guessTheword():
     # open file
     file = open('C:/Users/venla/Documents/Koodaus/advent_calendar/joulusanat.txt', 'r')
@@ -31,7 +30,7 @@ def guessTheword():
     return hintForWord, guessThis
 
 def newWord():
-    global globalword
+    global globalword, label2
     hint, globalword = guessTheword()
     #label = Label(windowbg, bg='#9A0000')
     label2.config(font =("Consolas", 10), text = hint)
@@ -39,7 +38,7 @@ def newWord():
     
 
 def check():
-    global textEntry, globalword
+    global textEntry, globalword, label2
     guess = textEntry.get()
     if (guess == globalword):
         #label = Label(windowbg, bg='#9A0000')
@@ -52,7 +51,7 @@ def check():
     return 
 
 def game():
-    
+    global windowbg, label1
     #buttons
     buttonHint = Button(windowbg, text = "New Word", bd = 5, bg = "#60100B", activebackground='#173518', height=4, width=10, command=newWord)
     buttonHint['font'] = 'Broadway'
@@ -65,7 +64,8 @@ def game():
     label1.pack()
     windowbg.mainloop()
 
-if __name__ == "__main__":
+def main():
+    global windowbg, label1, label2, textEntry
     # create window
     windowbg = Tk()
     # title of the window
