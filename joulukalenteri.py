@@ -1,8 +1,11 @@
 from tkinter import *
 from sana import main
 from PIL import Image
+from taikinaohje import mainDough
+from christmascard import mainCard
 import webbrowser
 import turtle
+
 
 # create window
 window = Tk()
@@ -20,16 +23,26 @@ window.geometry('700x700')
 label = Label(window, text = "Advent Calender", bg='#9A0000')
 label.config(font =("Broadway", 30))
 
+# coordinates
+x = 35
+y = 25
+
+# day
+day = 1
+
 # commands
 url1 = "https://www.youtube.com/watch?v=E8gmARGvPlI&ab_channel=WhamVEVO"
 url2 = "https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4isyysp%C3%A4iv%C3%A4"
 url3 = "https://www.youtube.com/watch?v=aAkMkVFwAoo&ab_channel=MariahCareyVEVO"
 url4 = "https://www.youtube.com/watch?v=fyEAX7Cd3OE&ab_channel=7clouds"
+url5 = "https://areena.yle.fi/1-50628566"
+
 poem = "I’m A Little Snowman \nI’m a little snowman short and fat,\nHere is my scarf and here is my hat.\nWhen I see the snowfall,\nHear me shout “All you children please come out!”"
 
 pic1 = Image.open('C:/Users/venla/Documents/Koodaus/advent_calendar/kuusi.jpg')
 pic2 = Image.open('C:/Users/venla/Documents/Koodaus/advent_calendar/joulu.jpg')
 
+# write text with turtle
 def write():
     turtle.hideturtle()
     turtle.penup()
@@ -38,12 +51,15 @@ def write():
     turtle.color("black")
     turtle.write("Hey, it's only a few days until christmas!", font=("Consolas", 12), align="center")
 
+# function for opening pictures
 def openPic(pic):
     pic.show()
 
+# function for opening web sites
 def open(url):
     webbrowser.open(url)
 
+# function for opening a new window with text
 def openWindow():
     textWindow = Toplevel(window)
     textWindow.geometry("400x400")
@@ -56,13 +72,12 @@ def openWindow():
     addPoem.pack()
     addPoem.insert(END,poem)
 
-functions = [open, openWindow, main, open, open, open, openPic, write, open, open, open, openPic, open, open, main, open, open, open, open, open, open, open, open, open]
-arguments = [url1, None, None, url3, url4, url2, pic1, None, url1, url2, url2, pic2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2, url2]
 
-# buttons
-x = 35
-y = 25
-day = 1
+# list of functions and arguments
+functions = [open, openWindow, main, open, open, open, openPic, write, open, mainDough, None, openPic, None, None, main, None, None, None, mainCard, None, None, None, None, None]
+arguments = [url1, None, None, url3, url4, url2, pic1, None, url5, None, None, pic2, None, None, None, None, None, None, None, None, None, None, None, None]
+
+# loop for creating grid and buttons
 
 for j in range(4):
     y=(y+120)
