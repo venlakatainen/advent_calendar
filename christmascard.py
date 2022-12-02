@@ -73,7 +73,9 @@ def drawTree(card):
 
     
 def mainCard():
+    turtle.TurtleScreen._RUNNING=True
     card = turtle.Turtle()
+    card.hideturtle()
     turtle.bgcolor("#E8FFFF")
     drawTree(card)
     message="Under the christmas tree"
@@ -81,9 +83,11 @@ def mainCard():
     card.color("Orange")
     card.pendown()
     card.write(message,move=False,align="center",font=("Arial",15,"bold"))
-    card.hideturtle()
-    turtle.mainloop()
-
+    turtle.exitonclick()
+    
     
 
 
+
+
+    

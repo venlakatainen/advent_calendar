@@ -10,6 +10,7 @@ import turtle
 
 # create window
 window = Tk()
+window.resizable(False, False)
 # title of the window
 window.title("Advent Calender")
 # window width and height
@@ -54,12 +55,14 @@ pic2 = Image.open('C:/Users/venla/Documents/Koodaus/advent_calendar/joulu.jpg')
 
 # write text with turtle
 def write():
+    turtle.TurtleScreen._RUNNING=True
     turtle.hideturtle()
     turtle.penup()
     turtle.setposition(0,0)
     turtle.bgcolor("red")
     turtle.color("black")
     turtle.write("Hey, it's only a few days until christmas!", font=("Consolas", 12), align="center")
+    turtle.exitonclick()
 
 # function for opening pictures
 def openPic(pic):
